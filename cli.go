@@ -41,7 +41,7 @@ func (d Diary) newDiary(date string) {
 			fmt.Fprintln(os.Stderr, "时间格式错误", err)
 			return
 		}
-		if time.Now().After(t) {
+		if t.After(time.Now()) {
 			fmt.Fprintln(os.Stderr, "日记日期超过当前日期")
 			return
 		}
